@@ -1,0 +1,92 @@
+{
+    "coord": {
+        "lon": -99.24,
+        "lat": 19.37
+    },
+    "weather": [
+        {
+            "id": 501,
+            "main": "Rain",
+            "description": "moderate rain",
+            "icon": "10n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 286.6,
+        "feels_like": 286.22,
+        "temp_min": 285.62,
+        "temp_max": 287.19,
+        "pressure": 1019,
+        "humidity": 85
+    },
+    "visibility": 4828,
+    "wind": {
+        "speed": 0.45,
+        "deg": 72,
+        "gust": 4.92
+    },
+    "rain": {
+        "1h": 2.37
+    },
+    "clouds": {
+        "all": 90
+    },
+    "dt": 1626404306,
+    "sys": {
+        "type": 2,
+        "id": 2040357,
+        "country": "MX",
+        "sunrise": 1626350830,
+        "sunset": 1626398300
+    },
+    "timezone": -18000,
+    "id": 3514663,
+    "name": "Álvaro Obregón",
+    "cod": 200
+}
+
+{
+    "coord": {
+        "lon": -97.8511,
+        "lat": 27.4214
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 301.58,
+        "feels_like": 306.35,
+        "temp_min": 300.85,
+        "temp_max": 302.5,
+        "pressure": 1013,
+        "humidity": 80
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.89,
+        "deg": 102,
+        "gust": 2.68
+    },
+    "clouds": {
+        "all": 1
+    },
+    "dt": 1626572434,
+    "sys": {
+        "type": 2,
+        "id": 2039359,
+        "country": "US",
+        "sunrise": 1626522423,
+        "sunset": 1626571663
+    },
+    "timezone": -18000,
+    "id": 4722542,
+    "name": "Ricardo",
+    "cod": 200
+}

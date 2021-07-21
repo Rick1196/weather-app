@@ -1,0 +1,36 @@
+@use '../util' as *;
+@mixin title-breaks {
+    @include breakpoint-down(medium) {
+        font-size: rem(34);
+    }
+    @include breakpoint-down(small) {
+        font-size: rem(29);
+    }
+    @include breakpoint-down(xsmall) {
+        font-size: rem(27);
+    }
+    @include breakpoint-down(phone) {
+        font-size: rem(25);
+    }
+    @include breakpoint-down(small-phone) {
+        font-size: rem(22);
+    }
+}
+
+@mixin content-breaks{
+    @include breakpoint-down(medium) {
+        font-size: rem(19);
+    }
+    @include breakpoint-down(small) {
+        font-size: rem(18);
+    }
+    @include breakpoint-down(xsmall) {
+        font-size: rem(17);
+    }
+    @include breakpoint-down(phone) {
+        font-size: rem(16);
+    }
+    @include breakpoint-down(small-phone) {
+        font-size: rem(15);
+    }
+}

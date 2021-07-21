@@ -1,0 +1,71 @@
+@use '../util' as *;
+@use '../fonts' as *;
+.base-card {
+    --card-blend-mode: overlay;
+    @include glass;
+    border-radius: 2rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.card-deck {
+    padding: rem(20);
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: rem(300);
+    margin-bottom: 1em;
+    max-height: rem(300);
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    &__weather-card {
+        @extend .base-card;
+        backdrop-filter: blur(var(--main-blur-card));
+        display: flex;
+        flex-direction: column;
+        &__title {
+            font-size: rem(37);
+            font-weight: 600;
+            width: 100%;
+            align-self: flex-start;
+            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include title-breaks;
+        }
+        &__content {
+            border: 1px solid;
+            height: 100%;
+            display: grid;
+            gap: 0;
+            grid-auto-flow: dense;
+            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            @include breakpoint-down(medium) {
+                grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+            }
+            @include breakpoint-down(average) {
+                grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+            }
+            @include breakpoint-down(small) {
+                grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+            }
+            @include breakpoint-down(xsmall) {
+                grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            }
+            @include breakpoint-down(phone) {
+                grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+            }
+        }
+        & section{
+            font-size: rem(20);
+            font-weight: 600;
+            display: flex;
+            min-width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include content-breaks;
+        }
+    }
+}

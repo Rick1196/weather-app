@@ -1,0 +1,48 @@
+{
+  "npmScope": "temp-workspace",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "N2RhOGU2YmYtZWRhOC00MjVkLTg0MDUtNjFjYTBmZWU1NjhlfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "know-weather": {
+      "tags": []
+    },
+    "know-weather-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "know-weather"
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "version": 2,
+  "projects": {
+    "know-weather": {
+      "root": "apps/know-weather",
+      "sourceRoot": "apps/know-weather/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "command": "node ../../node_modules/react-app-rewired/bin/index.js build",
+            "cwd": "apps/know-weather",
+            "outputPath": "dist/apps/know-weather"
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "node ../../node_modules/react-app-rewired/bin/index.js start",
+            "cwd": "apps/know-weather"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "node ../../node_modules/.bin/eslint src/**/*.tsx src/**/*.ts",
+            "cwd": "apps/know-weather"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "node ../../node_modules/react-app-rewired/bin/index.js test --watchAll=false",
+            "cwd": "apps/know-weather"
+          }
+        }
+      }
+    },
+    "know-weather-e2e": {
+      "root": "apps/know-weather-e2e",
+      "sourceRoot": "apps/know-weather-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx e2e-serve know-weather-e2e",
+              "nx e2e-run know-weather-e2e"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/know-weather-e2e/**/*.{js,ts}"
+            ]
+          }
+        },
+        "e2e-run": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/know-weather-e2e/cypress.json",
+            "tsConfig": "apps/know-weather-e2e/tsconfig.e2e.json",
+            "baseUrl": "http://localhost:3000"
+          }
+        },
+        "e2e-serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx serve know-weather"
+            ],
+            "readyWhen": "can now view"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "know-weather"
+}
