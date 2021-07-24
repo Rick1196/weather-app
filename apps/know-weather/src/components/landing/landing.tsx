@@ -1,6 +1,7 @@
 import i18next from 'i18next';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import usePosition from '../../custom-hooks/use-position';
 import weatherBackground from '../../functions/weather-background';
 import CurrentWeatherI from '../../interfaces/current-weatherI';
@@ -100,17 +101,18 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
           }}
           className="button left"
         >
-          Return to current position
+          <i className="fas fa-home"></i>
         </button>
         <form onSubmit={handleSubmit(getWeatherByCity)}>
           <input
             className="input-search"
             id="city"
             type="text"
+            placeholder="Search your city"
             {...register('city')}
           />
           <button type="submit" className="button right">
-            Search
+            <i className="fas fa-search"></i>
           </button>
         </form>
       </div>
@@ -170,7 +172,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
               <div>
                 {weather && (
                   <section>
-                    <p>{weather.main.feels_like}</p>{' '}
+                    <p>{weather.main.feels_like}°C</p>{' '}
                   </section>
                 )}
               </div>
@@ -185,7 +187,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
                 {weather && (
                   <section>
                     <p>
-                      {weather.main.temp_min} - {weather.main.temp_max}
+                      {weather.main.temp_min}°C - {weather.main.temp_max}°C
                     </p>
                   </section>
                 )}

@@ -14,20 +14,24 @@
     border: none;
     @include glass;
     @include breakpoint-down(medium) {
-		min-width: rem(300);
-	}
+        min-width: rem(300);
+    }
     @include breakpoint-down(small) {
-		min-width: rem(200);
-	}
+        min-width: rem(200);
+    }
     @include breakpoint-down(xsmall) {
-		min-width: rem(100);
-	}
+        min-width: rem(100);
+    }
     @include breakpoint-down(phone) {
-		min-width: rem(80);
-	}
+        min-width: rem(80);
+    }
     @include breakpoint-down(small-phone) {
-		min-width: rem(60);
-	}
+        min-width: rem(60);
+    }
+}
+::placeholder {
+    color: black;
+    opacity: 1; /* Firefox */
 }
 .button {
     @include glass;
@@ -35,25 +39,25 @@
     min-width: rem(150);
     border: none;
     @include breakpoint-down(medium) {
-		min-width: rem(130);
-		max-width: rem(130);
-	}
+        min-width: rem(130);
+        max-width: rem(130);
+    }
     @include breakpoint-down(small) {
-		min-width: rem(120);
-		max-width: rem(120);
-	}
+        min-width: rem(120);
+        max-width: rem(120);
+    }
     @include breakpoint-down(xsmall) {
-		min-width: rem(90);
-		max-width: rem(90);
-	}
+        min-width: rem(90);
+        max-width: rem(90);
+    }
     @include breakpoint-down(phone) {
-		min-width: rem(70);
-		max-width: rem(70);
-	}
+        min-width: rem(70);
+        max-width: rem(70);
+    }
     @include breakpoint-down(small-phone) {
-		min-width: rem(50);
-		max-width: rem(50);
-	}
+        min-width: rem(50);
+        max-width: rem(50);
+    }
     &.left {
         border-radius: rem(10) 0 0 rem(10);
     }
