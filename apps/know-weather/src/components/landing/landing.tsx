@@ -117,27 +117,6 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
           </button>
         </form>
       </div>
-      {/* <div>
-        {weatherIcon && (
-          <img
-            src={weatherIcon}
-            alt="current-weather-icon"
-            width={200}
-            height={200}
-          />
-        )}
-        {weather && (
-          <section>
-            {weather.main.temp}
-            {weather.main.feels_like}
-            {weather.weather[0].description}
-            {weather.main.temp_min}
-            {weather.main.temp_max}
-            {weather.name}
-            {properties.units}
-          </section>
-        )}
-      </div> */}
       <section>
         <div className="card-deck">
           <div className="card-deck__weather-card">
