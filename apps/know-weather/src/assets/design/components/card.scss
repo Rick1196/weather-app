@@ -34,12 +34,11 @@
             @include title-breaks;
         }
         &__content {
-            border: 1px solid;
             height: 100%;
             display: grid;
             gap: 0;
             grid-auto-flow: dense;
-            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
             @include breakpoint-down(medium) {
                 grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
             }
@@ -50,7 +49,7 @@
                 grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
             }
             @include breakpoint-down(xsmall) {
-                grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
             }
             @include breakpoint-down(phone) {
                 grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
