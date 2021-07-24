@@ -137,7 +137,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
               <div>
                 {weather && (
                   <section className="card-deck__weather-card__content__column__content">
-                    <p>{weather.main.temp}</p>
+                    <p>{weather.main.temp}°C</p>
                     <p>{weather.weather[0].description}</p>
                   </section>
                 )}
