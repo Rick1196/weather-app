@@ -96,6 +96,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
       <div className="search-section">
         <button
           type="submit"
+          title="Return to home city"
           onClick={() => {
             readCurrentPositionWeather();
           }}
@@ -111,7 +112,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
             placeholder="Search your city"
             {...register('city')}
           />
-          <button type="submit" className="button right">
+          <button type="submit" title="Search" className="button right">
             <i className="fas fa-search"></i>
           </button>
         </form>
