@@ -76,10 +76,10 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
     },
     [properties]
   );
-    /**
-     * Takes an input from the user and asks for the current weahter at that place
-     * @param {city}  name of the place to search
-     */
+  /**
+   * Takes an input from the user and asks for the current weahter at that place
+   * @param {city}  name of the place to search
+   */
   const getWeatherByCity = (formData: { city: string }) => {
     getWeatherCity(formData.city, properties)
       .then((res) => {
@@ -128,7 +128,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
   }, [weatherImage]);
   return (
     <>
-    {/* Search input section */}
+      {/* Search input section */}
       <section className="search-section">
         {/* Return to current position button */}
         <button
@@ -160,7 +160,7 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
       {/* Cards section */}
       <section>
         <div className="card-deck">
-          {/* Current weahter card splitted into 2 columns left for the icon and wight for the text */}
+          {/* Current weahter card splitted into 2 columns left for the icon and right for the text */}
           <div className="card-deck__weather-card">
             {/* Card title */}
             <div className="card-deck__weather-card__title">
@@ -168,23 +168,25 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
             </div>
             {/* Card content */}
             <div className="card-deck__weather-card__content">
+              {/* Left column for the weahter icon */}
               <div>
-                {weatherIcon && (
+                {weatherIcon ? (
                   <img
                     src={weatherIcon}
                     alt="current-weather-icon"
                     width={200}
                     height={200}
                   />
-                )}
+                ) : null}
               </div>
+              {/* right column for the weather data */}
               <div>
-                {weather && (
+                {weather ? (
                   <section className="card-deck__weather-card__content__column__content">
                     <p>{weather.main.temp}°C</p>
                     <p>{weather.weather[0].description}</p>
                   </section>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -194,11 +196,11 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
             </div>
             <div>
               <div>
-                {weather && (
+                {weather ? (
                   <section>
                     <p>{weather.main.feels_like}°C</p>{' '}
                   </section>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -208,13 +210,13 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
             </div>
             <div>
               <div>
-                {weather && (
+                {weather ? (
                   <section>
                     <p>
                       {weather.main.temp_min}°C - {weather.main.temp_max}°C
                     </p>
                   </section>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -224,12 +226,12 @@ const Landing: React.ComponentType<Record<string, never>> = () => {
             </div>
             <div>
               <div>
-                {weather && (
+                {weather ? (
                   <section>
                     <p>{weather.main.humidity}</p>
                     <p>{weather.main.pressure}</p>
                   </section>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
