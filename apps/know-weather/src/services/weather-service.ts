@@ -1,7 +1,13 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import CurrentWeatherI from '../interfaces/current-weatherI';
 import { WeatherPropertiesI } from '../interfaces/weather-propertiesI';
-
+/**
+ * 
+ * @param long 
+ * @param latitude 
+ * @param properties 
+ * @returns 
+ */
 export default function currentWeather(
     long: string,
     latitude: string,
@@ -15,7 +21,11 @@ export default function currentWeather(
         return response.data as CurrentWeatherI;
     });
 }
-
+/**
+ * Request weahter icon
+ * @param codeIcon retrieved from weather api
+ * @returns Blob object
+ */
 export function getWeatherIcon(codeIcon: string): Promise<Blob> {
     const requestOptions: AxiosRequestConfig = {
         method: 'GET',
@@ -29,7 +39,12 @@ export function getWeatherIcon(codeIcon: string): Promise<Blob> {
         return res.data;
     });
 }
-
+/**
+ * Request current weather od the city typed by the user
+ * @param cityName typed by the user
+ * @param properties {lang, units}
+ * @returns Promise<CurrentWeahter>
+ */
 export function getWeatherCity(
     cityName: string,
     properties: WeatherPropertiesI

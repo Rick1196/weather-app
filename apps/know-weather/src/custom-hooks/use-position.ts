@@ -6,6 +6,10 @@ import { useEffect, useState } from 'react';
 export default function usePosition(): GeolocationPosition | undefined {
     const [currentPosition, setCurrentPosition] =
         useState<GeolocationPosition>();
+    /**
+     * Function callback for the geolocation value
+     * @param position user geolocation
+     */
     const updateGeolocation = (position: GeolocationPosition) => {
         console.log('Updating posititon', position);
         setCurrentPosition(position);
